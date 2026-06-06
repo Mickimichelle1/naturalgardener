@@ -1,0 +1,1206 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>The Natural Homestead Guide</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap');
+
+    :root {
+      --green-dark: #2d5016;
+      --green-mid: #4a7c28;
+      --green-light: #7db84a;
+      --cream: #faf6ef;
+      --warm-tan: #e8dcc8;
+      --brown: #7a5c38;
+      --gold: #c89a2e;
+      --teal: #2a7a6e;
+      --teal-light: #4db8a6;
+      --text-dark: #2a2a2a;
+      --text-mid: #555;
+      --white: #ffffff;
+      --shadow: 0 4px 18px rgba(0,0,0,0.10);
+    }
+
+    * { box-sizing: border-box; margin: 0; padding: 0; }
+
+    body { font-family: 'Lato', sans-serif; background: var(--cream); color: var(--text-dark); }
+
+    /* ── AD ZONES ── */
+    .ad-banner {
+      background: #f0ede6;
+      border: 2px dashed #c5b89a;
+      text-align: center;
+      padding: 18px 0;
+      font-size: 13px;
+      color: #999;
+      letter-spacing: 1px;
+      text-transform: uppercase;
+    }
+    .ad-banner span { display: block; font-size: 11px; margin-top: 4px; color: #bbb; }
+    .ad-inner { height: 90px; display: flex; align-items: center; justify-content: center; color: #ccc; font-size: 13px; }
+
+    /* ── HEADER ── */
+    header {
+      background: linear-gradient(135deg, var(--green-dark) 0%, var(--green-mid) 60%, var(--green-light) 100%);
+      padding: 48px 20px 40px;
+      text-align: center;
+      position: relative;
+      overflow: hidden;
+    }
+    header::before {
+      content: '';
+      position: absolute; inset: 0;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Ccircle cx='10' cy='10' r='2' fill='rgba(255,255,255,0.06)'/%3E%3Ccircle cx='50' cy='30' r='3' fill='rgba(255,255,255,0.05)'/%3E%3Ccircle cx='70' cy='60' r='2' fill='rgba(255,255,255,0.07)'/%3E%3C/svg%3E") repeat;
+    }
+    .header-icon { font-size: 52px; display: block; margin-bottom: 10px; }
+    header h1 {
+      font-family: 'Playfair Display', serif;
+      font-size: clamp(2rem, 5vw, 3.4rem);
+      color: var(--white);
+      letter-spacing: 1px;
+      text-shadow: 0 2px 8px rgba(0,0,0,0.25);
+      position: relative;
+    }
+    header p {
+      margin-top: 10px;
+      font-size: 1.05rem;
+      color: rgba(255,255,255,0.85);
+      font-weight: 300;
+      position: relative;
+    }
+    .header-divider { margin: 18px auto 0; width: 80px; height: 3px; background: var(--gold); border-radius: 2px; position: relative; }
+
+    /* ── NAV ── */
+    nav {
+      background: var(--green-dark);
+      display: flex;
+      justify-content: center;
+      gap: 4px;
+      padding: 0 16px;
+      flex-wrap: wrap;
+      position: sticky; top: 0; z-index: 100;
+      box-shadow: 0 2px 10px rgba(0,0,0,0.25);
+    }
+    nav a {
+      color: rgba(255,255,255,0.85);
+      text-decoration: none;
+      padding: 13px 16px;
+      font-size: 0.85rem;
+      font-weight: 700;
+      letter-spacing: 0.4px;
+      text-transform: uppercase;
+      transition: color 0.2s, border-bottom 0.2s;
+      border-bottom: 3px solid transparent;
+    }
+    nav a:hover, nav a.active { color: var(--gold); border-bottom-color: var(--gold); }
+
+    /* ── MAIN ── */
+    main { max-width: 1100px; margin: 0 auto; padding: 0 20px 40px; }
+
+    /* ── SEARCH BAR ── */
+    .search-wrap { margin: 36px auto 10px; max-width: 640px; position: relative; }
+    .search-wrap input {
+      width: 100%;
+      padding: 16px 52px 16px 22px;
+      border: 2px solid var(--warm-tan);
+      border-radius: 50px;
+      font-size: 1rem;
+      font-family: 'Lato', sans-serif;
+      background: var(--white);
+      color: var(--text-dark);
+      outline: none;
+      box-shadow: var(--shadow);
+      transition: border-color 0.2s;
+    }
+    .search-wrap input:focus { border-color: var(--green-light); }
+    .search-wrap button {
+      position: absolute; right: 8px; top: 50%; transform: translateY(-50%);
+      background: var(--green-mid); border: none; border-radius: 50%;
+      width: 38px; height: 38px; cursor: pointer; font-size: 17px;
+      color: white; display: flex; align-items: center; justify-content: center;
+      transition: background 0.2s;
+    }
+    .search-wrap button:hover { background: var(--green-dark); }
+    .search-results-count { text-align: center; color: var(--text-mid); font-size: 0.88rem; margin-bottom: 16px; min-height: 20px; }
+
+    /* ── SECTION HEADERS ── */
+    .section-header { display: flex; align-items: center; gap: 14px; margin: 50px 0 24px; }
+    .section-header .icon { font-size: 2.2rem; }
+    .section-header h2 { font-family: 'Playfair Display', serif; font-size: 2rem; color: var(--green-dark); }
+    .section-line { flex: 1; height: 2px; background: linear-gradient(to right, var(--green-light), transparent); border-radius: 2px; }
+
+    .section-intro {
+      background: var(--white);
+      border-left: 4px solid var(--teal-light);
+      border-radius: 0 10px 10px 0;
+      padding: 16px 20px;
+      margin-bottom: 24px;
+      font-size: 0.95rem;
+      color: var(--text-mid);
+      line-height: 1.7;
+    }
+    .section-intro strong { color: var(--teal); }
+
+    /* ── CARDS GRID ── */
+    .cards-grid {
+      display: grid;
+      grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+      gap: 22px;
+    }
+
+    .card {
+      background: var(--white);
+      border-radius: 14px;
+      box-shadow: var(--shadow);
+      overflow: hidden;
+      transition: transform 0.2s, box-shadow 0.2s;
+      border: 1px solid #ede9e0;
+    }
+    .card:hover { transform: translateY(-4px); box-shadow: 0 10px 30px rgba(0,0,0,0.13); }
+    .card.hidden { display: none; }
+
+    .card-color-bar { height: 5px; }
+    .pest-bar   { background: linear-gradient(to right, #6aab3a, #a8d048); }
+    .poultry-bar{ background: linear-gradient(to right, #c8853a, #f0b96a); }
+    .flower-bar { background: linear-gradient(to right, #c24f8a, #e87fb8); }
+    .plant-bar  { background: linear-gradient(to right, #2a7a6e, #4db8a6); }
+    .cover-bar  { background: linear-gradient(to right, #5a6e1e, #9ab832); }
+
+    .card-body { padding: 22px; }
+    .card-emoji { font-size: 2rem; display: block; margin-bottom: 10px; }
+    .card h3 { font-family: 'Playfair Display', serif; font-size: 1.18rem; color: var(--green-dark); margin-bottom: 8px; }
+    .card p { font-size: 0.9rem; color: var(--text-mid); line-height: 1.65; margin-bottom: 14px; }
+
+    /* ── PAIR BADGE ── */
+    .pair-badge {
+      display: flex; align-items: center; gap: 8px;
+      background: linear-gradient(to right, #eaf5e4, #e0f5f0);
+      border-radius: 30px;
+      padding: 6px 14px;
+      margin-bottom: 12px;
+      font-size: 0.88rem;
+      font-weight: 700;
+      color: var(--teal);
+      width: fit-content;
+    }
+    .pair-badge .arrow { color: var(--green-light); font-size: 1rem; }
+
+    .toggle-btn {
+      background: none;
+      border: 1.5px solid var(--green-mid);
+      color: var(--green-mid);
+      border-radius: 20px;
+      padding: 6px 16px;
+      font-size: 0.82rem;
+      font-weight: 700;
+      cursor: pointer;
+      letter-spacing: 0.3px;
+      transition: all 0.2s;
+      font-family: 'Lato', sans-serif;
+    }
+    .toggle-btn:hover, .toggle-btn.open { background: var(--green-mid); color: white; }
+
+    .recipe-detail {
+      display: none;
+      margin-top: 14px;
+      background: var(--cream);
+      border-radius: 10px;
+      padding: 14px 16px;
+      font-size: 0.87rem;
+      color: var(--text-dark);
+      line-height: 1.7;
+      border-left: 3px solid var(--green-light);
+    }
+    .recipe-detail.show { display: block; }
+    .recipe-detail strong { color: var(--green-dark); display: block; margin-bottom: 4px; }
+    .recipe-detail ul { padding-left: 18px; }
+    .recipe-detail li { margin-bottom: 3px; }
+
+    .teal-detail { border-left-color: var(--teal-light); }
+    .teal-detail strong { color: var(--teal); }
+
+    .tag {
+      display: inline-block;
+      background: var(--warm-tan);
+      color: var(--brown);
+      font-size: 0.75rem;
+      font-weight: 700;
+      padding: 3px 10px;
+      border-radius: 20px;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 0.5px;
+    }
+    .tag-teal { background: #d4f0eb; color: var(--teal); }
+    .tag-cover { background: #e6edcc; color: #4a5c10; }
+
+    /* ── BENEFIT PILLS ── */
+    .benefits { display: flex; flex-wrap: wrap; gap: 6px; margin-bottom: 12px; }
+    .pill {
+      background: #eaf5e4; color: var(--green-mid);
+      font-size: 0.73rem; font-weight: 700;
+      padding: 3px 10px; border-radius: 20px;
+      text-transform: uppercase; letter-spacing: 0.4px;
+    }
+    .pill-teal { background: #d4f0eb; color: var(--teal); }
+    .pill-gold { background: #fdf0d0; color: #8a6010; }
+
+    /* ── COVER CROP TABLE ── */
+    .crop-table { width: 100%; border-collapse: collapse; font-size: 0.83rem; margin-top: 10px; }
+    .crop-table th {
+      background: var(--green-dark); color: white;
+      padding: 7px 10px; text-align: left; font-weight: 700;
+    }
+    .crop-table td { padding: 6px 10px; border-bottom: 1px solid #e8e0d0; vertical-align: top; }
+    .crop-table tr:nth-child(even) td { background: #f5f1e8; }
+
+    /* ── FOOTER ── */
+    footer {
+      background: var(--green-dark);
+      color: rgba(255,255,255,0.75);
+      text-align: center;
+      padding: 32px 20px;
+      font-size: 0.88rem;
+      line-height: 1.8;
+    }
+    footer .footer-logo { font-family: 'Playfair Display', serif; font-size: 1.3rem; color: white; margin-bottom: 8px; }
+    footer a { color: var(--gold); text-decoration: none; }
+
+    .no-results { text-align: center; padding: 40px; color: var(--text-mid); font-size: 1rem; display: none; }
+    .no-results.show { display: block; }
+
+    @media (max-width: 600px) {
+      .cards-grid { grid-template-columns: 1fr; }
+      nav a { padding: 10px 10px; font-size: 0.75rem; }
+    }
+  </style>
+</head>
+<body>
+
+<!-- ══ TOP AD BANNER ══ -->
+<div class="ad-banner">
+  📢 Advertisement
+  <span><!-- Google AdSense: Replace with your script tag, e.g. <ins class="adsbygoogle" data-ad-slot="XXXXXXXXXX"></ins> --></span>
+  <div class="ad-inner">[ 728×90 Leaderboard Ad Space ]</div>
+</div>
+
+<!-- ══ HEADER ══ -->
+<header>
+  <span class="header-icon">🌿</span>
+  <h1>The Natural Homestead Guide</h1>
+  <p>Wholesome wisdom for pest control, backyard poultry, perennial gardens &amp; intentional planting</p>
+  <div class="header-divider"></div>
+</header>
+
+<!-- ══ NAV ══ -->
+<nav>
+  <a href="#pest"      onclick="setActive(this)">🐛 Pest Control</a>
+  <a href="#poultry"   onclick="setActive(this)">🐔 Backyard Poultry</a>
+  <a href="#flowers"   onclick="setActive(this)">🌸 Perennial Flowers</a>
+  <a href="#planting"  onclick="setActive(this)">🌱 Intentional Planting</a>
+</nav>
+
+<!-- ══ MAIN ══ -->
+<main>
+
+  <div class="search-wrap">
+    <input type="text" id="searchInput" placeholder="Search all guides — pest, poultry, flowers, planting…" oninput="handleSearch()" />
+    <button onclick="handleSearch()">🔍</button>
+  </div>
+  <p class="search-results-count" id="resultsCount"></p>
+  <p class="no-results" id="noResults">😔 No results found. Try a different keyword!</p>
+
+  <!-- ════════════════════
+       PEST CONTROL
+  ════════════════════ -->
+  <div class="section-header" id="pest">
+    <span class="icon">🐛</span>
+    <h2>All-Natural Pest Control Recipes</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="cards-grid">
+
+    <div class="card" data-keywords="garlic spray aphids beetles caterpillars spray">
+      <div class="card-color-bar pest-bar"></div>
+      <div class="card-body">
+        <span class="card-emoji">🧄</span>
+        <span class="tag">Spray Recipe</span>
+        <h3>Garlic Pepper Spray</h3>
+        <p>A powerful deterrent for soft-bodied insects like aphids, spider mites, and caterpillars — safe for plants and pets.</p>
+        <button class="toggle-btn" onclick="toggleRecipe(this)">▶ View Recipe</button>
+        <div class="recipe-detail">
+          <strong>🧪 Ingredients</strong>
+          <ul>
+            <li>1 whole bulb of garlic, minced</li>
+            <li>1 tbsp cayenne pepper</li>
+            <li>1 tsp dish soap (castile)</li>
+            <li>1 quart warm water</li>
+          </ul><br/>
+          <strong>📋 Instructions</strong>
+          Blend garlic with ½ cup water. Strain into a quart jar. Add cayenne pepper and dish soap. Dilute with remaining water. Spray directly on affected plants in the early morning. Reapply after rain.
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-keywords="neem oil fungal mold mites aphids spray oil">
+      <div class="card-color-bar pest-bar"></div>
+      <div class="card-body">
+        <span class="card-emoji">🌿</span>
+        <span class="tag">Spray Recipe</span>
+        <h3>Neem Oil Fungal &amp; Insect Spray</h3>
+        <p>Tackles aphids, whitefly, powdery mildew, and fungal issues — a homestead staple for the entire growing season.</p>
+        <button class="toggle-btn" onclick="toggleRecipe(this)">▶ View Recipe</button>
+        <div class="recipe-detail">
+          <strong>🧪 Ingredients</strong>
+          <ul>
+            <li>2 tbsp cold-pressed neem oil</li>
+            <li>1 tsp castile soap</li>
+            <li>1 quart warm water</li>
+          </ul><br/>
+          <strong>📋 Instructions</strong>
+          Mix soap into warm water first, then add neem oil. Shake well before each use. Spray all leaf surfaces every 7–14 days. Avoid applying in direct afternoon sun.
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-keywords="diatomaceous earth crawling slugs beetles ants powder barrier">
+      <div class="card-color-bar pest-bar"></div>
+      <div class="card-body">
+        <span class="card-emoji">🪨</span>
+        <span class="tag">Barrier Method</span>
+        <h3>Diatomaceous Earth Barrier</h3>
+        <p>Non-toxic fossilized powder that destroys the exoskeletons of slugs, beetles, earwigs, and ants on contact.</p>
+        <button class="toggle-btn" onclick="toggleRecipe(this)">▶ View Recipe</button>
+        <div class="recipe-detail">
+          <strong>🧪 What You Need</strong>
+          <ul>
+            <li>Food-grade diatomaceous earth (DE)</li>
+            <li>A duster or old flour shaker</li>
+          </ul><br/>
+          <strong>📋 Instructions</strong>
+          Apply a thin ring of DE around the base of vulnerable plants or along garden bed edges. Reapply after every rain or heavy dew. Always use food-grade DE and avoid inhaling the dust.
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-keywords="soap spray scale mealybugs aphids whitefly castile">
+      <div class="card-color-bar pest-bar"></div>
+      <div class="card-body">
+        <span class="card-emoji">🫧</span>
+        <span class="tag">Spray Recipe</span>
+        <h3>Insecticidal Soap Spray</h3>
+        <p>A gentle yet effective contact spray for scale insects, mealybugs, and aphids — works by suffocating the pest.</p>
+        <button class="toggle-btn" onclick="toggleRecipe(this)">▶ View Recipe</button>
+        <div class="recipe-detail">
+          <strong>🧪 Ingredients</strong>
+          <ul>
+            <li>1.5 tsp pure castile soap (unscented)</li>
+            <li>1 quart cool water</li>
+            <li>Optional: 5 drops peppermint essential oil</li>
+          </ul><br/>
+          <strong>📋 Instructions</strong>
+          Mix soap and water gently. Spray directly onto pests. Works best in early morning or evening. Test on a single leaf 24 hrs before broad application.
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-keywords="vinegar weed killer weeds path driveway salt">
+      <div class="card-color-bar pest-bar"></div>
+      <div class="card-body">
+        <span class="card-emoji">🍶</span>
+        <span class="tag">Weed Control</span>
+        <h3>Vinegar Weed Killer</h3>
+        <p>A fast-acting natural herbicide for paths, driveways, and cracks — kills weeds without harsh chemicals.</p>
+        <button class="toggle-btn" onclick="toggleRecipe(this)">▶ View Recipe</button>
+        <div class="recipe-detail">
+          <strong>🧪 Ingredients</strong>
+          <ul>
+            <li>1 gallon white or horticultural vinegar (20% acidity)</li>
+            <li>1 cup salt</li>
+            <li>1 tbsp dish soap</li>
+          </ul><br/>
+          <strong>📋 Instructions</strong>
+          Combine and stir until salt dissolves. Spray directly on weed foliage on a sunny day. Non-selective — keep away from garden beds and lawn.
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-keywords="companion planting basil marigold lavender deter insects prevention">
+      <div class="card-color-bar pest-bar"></div>
+      <div class="card-body">
+        <span class="card-emoji">🌻</span>
+        <span class="tag">Prevention</span>
+        <h3>Companion Planting Overview</h3>
+        <p>Strategically planting pest-repelling herbs and flowers is the oldest natural pest control method in the world.</p>
+        <button class="toggle-btn" onclick="toggleRecipe(this)">▶ View Tips</button>
+        <div class="recipe-detail">
+          <strong>🌱 Top Companion Pairings</strong>
+          <ul>
+            <li><b>Basil</b> next to tomatoes — repels aphids &amp; hornworms</li>
+            <li><b>Marigolds</b> around the garden edge — deters nematodes &amp; whitefly</li>
+            <li><b>Lavender</b> near brassicas — repels cabbage moths</li>
+            <li><b>Nasturtiums</b> as trap crops — aphids prefer them</li>
+            <li><b>Dill &amp; fennel</b> attract beneficial predatory wasps</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Mid Ad -->
+  <div class="ad-banner" style="margin:40px 0 10px; border-radius:10px;">
+    📢 Advertisement
+    <span><!-- Google AdSense: data-ad-slot="MID_RECTANGLE" --></span>
+    <div class="ad-inner">[ 336×280 Rectangle Ad Space ]</div>
+  </div>
+
+  <!-- ════════════════════
+       BACKYARD POULTRY
+  ════════════════════ -->
+  <div class="section-header" id="poultry">
+    <span class="icon">🐔</span>
+    <h2>Backyard Poultry Care</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="cards-grid">
+
+    <div class="card" data-keywords="chicken coop bedding nesting box setup housing roost">
+      <div class="card-color-bar poultry-bar"></div>
+      <div class="card-body">
+        <span class="card-emoji">🏡</span>
+        <span class="tag">Housing</span>
+        <h3>Setting Up the Perfect Coop</h3>
+        <p>A safe, clean, and comfortable coop is the foundation of healthy backyard chickens. Here's how to get it right.</p>
+        <button class="toggle-btn" onclick="toggleRecipe(this)">▶ View Tips</button>
+        <div class="recipe-detail">
+          <strong>📐 Key Coop Requirements</strong>
+          <ul>
+            <li>Minimum <b>4 sq ft per bird</b> inside the coop</li>
+            <li>At least <b>10 sq ft per bird</b> in the run</li>
+            <li>1 nesting box per 3–4 hens, filled with straw</li>
+            <li>Roosting bars set 12–18" off the floor</li>
+            <li>Good ventilation — vents near the roof, not drafts</li>
+            <li>Predator-proof latches (raccoons open simple hooks)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-keywords="chicken feed layer pellet scratch grain diet nutrition fermented">
+      <div class="card-color-bar poultry-bar"></div>
+      <div class="card-body">
+        <span class="card-emoji">🌾</span>
+        <span class="tag">Feeding</span>
+        <h3>Natural Feeding &amp; Nutrition</h3>
+        <p>Laying hens need a balanced diet. Supplement store-bought feed with forage and kitchen scraps for peak health.</p>
+        <button class="toggle-btn" onclick="toggleRecipe(this)">▶ View Tips</button>
+        <div class="recipe-detail">
+          <strong>🥣 What to Feed</strong>
+          <ul>
+            <li>16–18% protein layer pellets or crumbles as the base</li>
+            <li>Oyster shell free-choice for strong eggshells</li>
+            <li>Kitchen scraps: veggies, fruit, cooked grains, yogurt</li>
+            <li>Grit (coarse sand/granite) for digestion</li>
+            <li>Fermented feed — soak 48–72 hrs for gut health</li>
+          </ul><br/>
+          <strong>🚫 Avoid:</strong>
+          <ul><li>Avocado, chocolate, onion, raw potato, citrus</li></ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-keywords="duck care water dabbling breed backyard pond pekin khaki">
+      <div class="card-color-bar poultry-bar"></div>
+      <div class="card-body">
+        <span class="card-emoji">🦆</span>
+        <span class="tag">Ducks</span>
+        <h3>Raising Backyard Ducks</h3>
+        <p>Ducks are excellent for pest control, provide rich eggs, and are surprisingly cold-hardy. A great addition to any homestead.</p>
+        <button class="toggle-btn" onclick="toggleRecipe(this)">▶ View Tips</button>
+        <div class="recipe-detail">
+          <strong>🌊 Duck Essentials</strong>
+          <ul>
+            <li>Always provide <b>deep water</b> for dunking heads</li>
+            <li>Kiddie pools work great as a low-cost pond substitute</li>
+            <li>Best beginner breeds: <b>Pekin, Khaki Campbell, Welsh Harlequin</b></li>
+            <li>Ducks don't need a coop — a simple 3-sided shelter is fine</li>
+            <li>They'll eat slugs, snails &amp; insects across your garden</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-keywords="chicken health mites lice worms parasite natural treatment diatomaceous apple cider">
+      <div class="card-color-bar poultry-bar"></div>
+      <div class="card-body">
+        <span class="card-emoji">💊</span>
+        <span class="tag">Natural Health</span>
+        <h3>Natural Parasite Prevention</h3>
+        <p>Keep your flock free of lice, mites, and intestinal worms using simple, all-natural remedies and preventive habits.</p>
+        <button class="toggle-btn" onclick="toggleRecipe(this)">▶ View Tips</button>
+        <div class="recipe-detail">
+          <strong>🌿 Natural Treatments</strong>
+          <ul>
+            <li><b>Dust bath</b> with wood ash &amp; DE — prevents lice &amp; mites</li>
+            <li><b>Apple cider vinegar</b> (1 tbsp/gallon water) — boosts gut health</li>
+            <li><b>Garlic powder</b> in feed — natural wormer</li>
+            <li><b>Pumpkin seeds</b> — traditional dewormer, fed raw</li>
+            <li>Rotate pasture areas to break parasite cycles</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-keywords="egg collection laying boxes production diet light winter ISA Rhode Island Leghorn">
+      <div class="card-color-bar poultry-bar"></div>
+      <div class="card-body">
+        <span class="card-emoji">🥚</span>
+        <span class="tag">Egg Production</span>
+        <h3>Maximizing Natural Egg Laying</h3>
+        <p>Understand what drives egg production and how to support your hens through winter slumps naturally.</p>
+        <button class="toggle-btn" onclick="toggleRecipe(this)">▶ View Tips</button>
+        <div class="recipe-detail">
+          <strong>☀️ Laying Factors</strong>
+          <ul>
+            <li>Hens need <b>14–16 hrs of light</b> to lay consistently</li>
+            <li>Add a low-watt bulb on a timer for winter supplementation</li>
+            <li>Stress (predators, overcrowding) halts laying quickly</li>
+            <li>Hens molt 1x per year — no eggs during molt is normal</li>
+            <li>Best laying breeds: <b>ISA Brown, Rhode Island Red, Leghorn</b></li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-keywords="quail raising coturnix small space backyard eggs meat quiet suburban">
+      <div class="card-color-bar poultry-bar"></div>
+      <div class="card-body">
+        <span class="card-emoji">🐦</span>
+        <span class="tag">Quail</span>
+        <h3>Raising Coturnix Quail</h3>
+        <p>Quail are ideal for small homesteads — they lay at 6–8 weeks old, are quiet, and need minimal space.</p>
+        <button class="toggle-btn" onclick="toggleRecipe(this)">▶ View Tips</button>
+        <div class="recipe-detail">
+          <strong>🐣 Quail Basics</strong>
+          <ul>
+            <li>1 sq ft per bird in a raised wire cage or hutch</li>
+            <li>Reach laying age in just <b>6–8 weeks</b></li>
+            <li>Lay 250–300 eggs per year</li>
+            <li>Feed 20–24% protein game bird feed</li>
+            <li>Keep 1 male per 3–5 females</li>
+            <li>Quiet — no crowing, perfect for suburban backyards</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Mid Ad 2 -->
+  <div class="ad-banner" style="margin:40px 0 10px; border-radius:10px;">
+    📢 Advertisement
+    <span><!-- Google AdSense: data-ad-slot="MID_RECTANGLE_2" --></span>
+    <div class="ad-inner">[ 336×280 Rectangle Ad Space ]</div>
+  </div>
+
+  <!-- ════════════════════
+       PERENNIAL FLOWERS
+  ════════════════════ -->
+  <div class="section-header" id="flowers">
+    <span class="icon">🌸</span>
+    <h2>Growing Perennial Flowers</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="cards-grid">
+
+    <div class="card" data-keywords="lavender purple fragrant drought hardy pollinator bee aromatic">
+      <div class="card-color-bar flower-bar"></div>
+      <div class="card-body">
+        <span class="card-emoji">💜</span>
+        <span class="tag">Perennial</span>
+        <h3>Lavender</h3>
+        <p>Aromatic, drought-tolerant, and irresistible to bees &amp; butterflies. Also doubles as a natural pest repellent.</p>
+        <button class="toggle-btn" onclick="toggleRecipe(this)">▶ Growing Tips</button>
+        <div class="recipe-detail">
+          <strong>🌱 Growing Guide</strong>
+          <ul>
+            <li><b>Hardiness:</b> Zones 5–9</li>
+            <li><b>Sun:</b> Full sun (6+ hours)</li>
+            <li><b>Soil:</b> Well-drained, slightly alkaline</li>
+            <li><b>Watering:</b> Drought-tolerant once established</li>
+            <li><b>Pruning:</b> Cut back ⅓ after first bloom flush</li>
+            <li><b>Best variety:</b> English lavender (most cold-hardy)</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-keywords="echinacea coneflower pink purple prairie native pollinator deer resistant medicinal">
+      <div class="card-color-bar flower-bar"></div>
+      <div class="card-body">
+        <span class="card-emoji">🌸</span>
+        <span class="tag">Perennial</span>
+        <h3>Echinacea (Coneflower)</h3>
+        <p>A stunning prairie native beloved by bees and goldfinches. Low-maintenance, deer-resistant, and medicinal.</p>
+        <button class="toggle-btn" onclick="toggleRecipe(this)">▶ Growing Tips</button>
+        <div class="recipe-detail">
+          <strong>🌱 Growing Guide</strong>
+          <ul>
+            <li><b>Hardiness:</b> Zones 3–9</li>
+            <li><b>Sun:</b> Full sun to part shade</li>
+            <li><b>Soil:</b> Tolerates poor, dry soils</li>
+            <li><b>Bloom time:</b> June through October</li>
+            <li>Leave seedheads over winter — birds love the seeds</li>
+            <li>Divide every 3–4 years to keep clumps vigorous</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-keywords="black eyed susan rudbeckia yellow native wildflower butterfly drought self-seeds">
+      <div class="card-color-bar flower-bar"></div>
+      <div class="card-body">
+        <span class="card-emoji">🌼</span>
+        <span class="tag">Perennial</span>
+        <h3>Black-Eyed Susan</h3>
+        <p>A cheerful, rugged native wildflower that thrives in difficult conditions and self-seeds freely around the garden.</p>
+        <button class="toggle-btn" onclick="toggleRecipe(this)">▶ Growing Tips</button>
+        <div class="recipe-detail">
+          <strong>🌱 Growing Guide</strong>
+          <ul>
+            <li><b>Hardiness:</b> Zones 3–10</li>
+            <li><b>Sun:</b> Full sun preferred</li>
+            <li><b>Soil:</b> Adaptable — tolerates clay, sandy, and dry soils</li>
+            <li><b>Bloom time:</b> July through September</li>
+            <li>Self-seeds readily — thin seedlings in spring</li>
+            <li>Great for cutting gardens, naturalized meadow borders</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-keywords="peonies peony fragrant big blooms spring June cut flower long-lived heirloom">
+      <div class="card-color-bar flower-bar"></div>
+      <div class="card-body">
+        <span class="card-emoji">🌺</span>
+        <span class="tag">Perennial</span>
+        <h3>Peonies</h3>
+        <p>Lush, fragrant, and long-lived — a peony plant can bloom for 50+ years with minimal care. A garden heirloom.</p>
+        <button class="toggle-btn" onclick="toggleRecipe(this)">▶ Growing Tips</button>
+        <div class="recipe-detail">
+          <strong>🌱 Growing Guide</strong>
+          <ul>
+            <li><b>Hardiness:</b> Zones 3–8 (need cold winters to bloom)</li>
+            <li><b>Planting:</b> Plant eyes <b>no more than 1–2 inches deep</b></li>
+            <li>Ants on buds are harmless — they feed on nectar</li>
+            <li>Support heavy blooms with peony rings</li>
+            <li>Cut back foliage to the ground in fall</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-keywords="hosta shade foliage hostas partial shade woodland ground cover blue green gold">
+      <div class="card-color-bar flower-bar"></div>
+      <div class="card-body">
+        <span class="card-emoji">🍃</span>
+        <span class="tag">Shade Perennial</span>
+        <h3>Hostas</h3>
+        <p>The king of shade gardens — bold foliage in every shade of green, blue, and gold. Virtually indestructible.</p>
+        <button class="toggle-btn" onclick="toggleRecipe(this)">▶ Growing Tips</button>
+        <div class="recipe-detail">
+          <strong>🌱 Growing Guide</strong>
+          <ul>
+            <li><b>Hardiness:</b> Zones 3–9</li>
+            <li><b>Sun:</b> Part to full shade</li>
+            <li><b>Soil:</b> Rich, moist, well-drained</li>
+            <li>Slugs are the main pest — use DE or copper tape</li>
+            <li>Divide clumps in spring every 3–5 years for free plants</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-keywords="salvia sage hummingbird purple blue long bloom drought summer May Night caradonna">
+      <div class="card-color-bar flower-bar"></div>
+      <div class="card-body">
+        <span class="card-emoji">🔵</span>
+        <span class="tag">Perennial</span>
+        <h3>Salvia (Perennial Sage)</h3>
+        <p>Drought-tolerant spires of violet-blue that hummingbirds and bees absolutely adore — blooms until frost.</p>
+        <button class="toggle-btn" onclick="toggleRecipe(this)">▶ Growing Tips</button>
+        <div class="recipe-detail">
+          <strong>🌱 Growing Guide</strong>
+          <ul>
+            <li><b>Hardiness:</b> Zones 4–9</li>
+            <li><b>Sun:</b> Full sun</li>
+            <li><b>Soil:</b> Well-drained; tolerates poor soil</li>
+            <li><b>Bloom time:</b> May through frost with deadheading</li>
+            <li><b>Best varieties:</b> May Night, Blue Hill, Caradonna</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Mid Ad 3 -->
+  <div class="ad-banner" style="margin:40px 0 10px; border-radius:10px;">
+    📢 Advertisement
+    <span><!-- Google AdSense: data-ad-slot="MID_RECTANGLE_3" --></span>
+    <div class="ad-inner">[ 728×90 Leaderboard Ad Space ]</div>
+  </div>
+
+  <!-- ══════════════════════════════════════════
+       ✨ NEW SECTION — INTENTIONAL PLANTING ✨
+  ══════════════════════════════════════════ -->
+  <div class="section-header" id="planting">
+    <span class="icon">🌱</span>
+    <h2>Intentional Planting</h2>
+    <div class="section-line"></div>
+  </div>
+
+  <div class="section-intro">
+    <strong>What is Intentional Planting?</strong> It's designing your garden with purpose — choosing plants that <em>work together</em> to protect each other, attract beneficial insects, repel pests, and build your soil naturally so every growing season is better than the last.
+  </div>
+
+  <!-- Sub-section: Companion Planting -->
+  <div style="display:flex; align-items:center; gap:10px; margin:30px 0 18px;">
+    <span style="font-size:1.6rem;">🤝</span>
+    <h3 style="font-family:'Playfair Display',serif; font-size:1.4rem; color:var(--teal);">Companion Planting Pairs</h3>
+  </div>
+
+  <div class="cards-grid">
+
+    <div class="card" data-keywords="marigold tomato nematode whitefly aphid repel vegetable flower companion">
+      <div class="card-color-bar plant-bar"></div>
+      <div class="card-body">
+        <span class="card-emoji">🌼</span>
+        <span class="tag tag-teal">Companion Pair</span>
+        <div class="pair-badge">🍅 Tomatoes <span class="arrow">+</span> 🌼 Marigolds</div>
+        <div class="benefits">
+          <span class="pill pill-teal">Repels Nematodes</span>
+          <span class="pill pill-teal">Deters Whitefly</span>
+          <span class="pill">Attracts Bees</span>
+        </div>
+        <p>Marigolds release a chemical from their roots that repels root-knot nematodes. Plant French marigolds densely around the tomato bed perimeter for best effect.</p>
+        <button class="toggle-btn" onclick="toggleRecipe(this)">▶ Planting Guide</button>
+        <div class="recipe-detail teal-detail">
+          <strong>🌱 How to Plant This Pair</strong>
+          <ul>
+            <li>Use <b>French marigolds</b> (Tagetes patula) — most effective variety</li>
+            <li>Plant 6–12" apart in a dense border around tomato beds</li>
+            <li>Interplant between tomato cages for whitefly protection</li>
+            <li>Let marigolds bloom all season — don't deadhead completely</li>
+            <li>Works best with at least <b>2 full growing seasons</b> to suppress nematodes</li>
+          </ul>
+          <br/>
+          <strong>💡 Bonus Benefit</strong>
+          Marigold flowers attract hoverflies, whose larvae eat aphids at rates of up to 400 per day.
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-keywords="basil pepper aphid spider mite repel herb vegetable companion fragrance">
+      <div class="card-color-bar plant-bar"></div>
+      <div class="card-body">
+        <span class="card-emoji">🌿</span>
+        <span class="tag tag-teal">Companion Pair</span>
+        <div class="pair-badge">🫑 Peppers <span class="arrow">+</span> 🌿 Basil</div>
+        <div class="benefits">
+          <span class="pill pill-teal">Repels Aphids</span>
+          <span class="pill pill-teal">Deters Spider Mites</span>
+          <span class="pill">Improves Flavor</span>
+        </div>
+        <p>The volatile oils in basil confuse and repel aphids and spider mites. Many gardeners report improved pepper flavor from proximity planting — worth trying!</p>
+        <button class="toggle-btn" onclick="toggleRecipe(this)">▶ Planting Guide</button>
+        <div class="recipe-detail teal-detail">
+          <strong>🌱 How to Plant This Pair</strong>
+          <ul>
+            <li>Plant basil <b>12–18" from each pepper plant</b></li>
+            <li>Interplant rows: one row peppers, one row basil, alternating</li>
+            <li>Allow basil to flower — the blooms attract beneficial wasps</li>
+            <li>Harvest basil regularly to keep it bushy and aromatic</li>
+            <li>Works with sweet, hot, and bell pepper varieties</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-keywords="nasturtium cucumber squash aphid trap crop beetle repel flower vegetable companion">
+      <div class="card-color-bar plant-bar"></div>
+      <div class="card-body">
+        <span class="card-emoji">🧡</span>
+        <span class="tag tag-teal">Companion Pair</span>
+        <div class="pair-badge">🥒 Cucumbers <span class="arrow">+</span> 🧡 Nasturtiums</div>
+        <div class="benefits">
+          <span class="pill pill-teal">Trap Crop</span>
+          <span class="pill pill-teal">Repels Beetles</span>
+          <span class="pill">Edible Flowers</span>
+        </div>
+        <p>Nasturtiums act as a magnet for aphids, luring them away from cucumbers. They also repel cucumber beetles and squash bugs — and the flowers are edible!</p>
+        <button class="toggle-btn" onclick="toggleRecipe(this)">▶ Planting Guide</button>
+        <div class="recipe-detail teal-detail">
+          <strong>🌱 How to Plant This Pair</strong>
+          <ul>
+            <li>Plant nasturtiums at the <b>ends and corners</b> of cucumber rows</li>
+            <li>Let them sprawl freely — they need no support</li>
+            <li>When aphids colonize nasturtiums, pull and compost those plants</li>
+            <li>Direct sow nasturtium seeds after last frost — they resent transplanting</li>
+            <li><b>Trailing variety</b> recommended: 'Alaska', 'Jewel Mix'</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-keywords="dill carrot fly parsley brassica cabbage moth butterfly larva repel herb flower companion">
+      <div class="card-color-bar plant-bar"></div>
+      <div class="card-body">
+        <span class="card-emoji">🥕</span>
+        <span class="tag tag-teal">Companion Pair</span>
+        <div class="pair-badge">🥦 Brassicas <span class="arrow">+</span> 🌿 Dill</div>
+        <div class="benefits">
+          <span class="pill pill-teal">Repels Cabbage Moth</span>
+          <span class="pill">Attracts Predatory Wasps</span>
+          <span class="pill pill-gold">Beneficial Insect Hub</span>
+        </div>
+        <p>Dill's umbrella flowers attract tiny parasitic wasps that prey on cabbage loopers and imported cabbageworms — natural biological control at its finest.</p>
+        <button class="toggle-btn" onclick="toggleRecipe(this)">▶ Planting Guide</button>
+        <div class="recipe-detail teal-detail">
+          <strong>🌱 How to Plant This Pair</strong>
+          <ul>
+            <li>Sow dill seeds between cabbage, kale, and broccoli rows</li>
+            <li>Allow dill to bolt and flower — that's when it does its best work</li>
+            <li>Plant in succession every 3 weeks to keep flowers coming</li>
+            <li>⚠️ Keep dill away from <b>carrots</b> — they cross-pollinate and degrade flavor</li>
+            <li>Also pairs well with: lettuce, onion, cucumbers</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-keywords="borage strawberry tomato hornworm tomato worm pollinator bee companion flower">
+      <div class="card-color-bar plant-bar"></div>
+      <div class="card-body">
+        <span class="card-emoji">⭐</span>
+        <span class="tag tag-teal">Companion Pair</span>
+        <div class="pair-badge">🍓 Strawberries <span class="arrow">+</span> ⭐ Borage</div>
+        <div class="benefits">
+          <span class="pill pill-teal">Repels Hornworms</span>
+          <span class="pill">Boosts Yield</span>
+          <span class="pill">Attracts Pollinators</span>
+        </div>
+        <p>Borage is a powerhouse companion — it repels tomato hornworms and strawberry pests, attracts bees to boost pollination, and its leaves add trace minerals to the soil.</p>
+        <button class="toggle-btn" onclick="toggleRecipe(this)">▶ Planting Guide</button>
+        <div class="recipe-detail teal-detail">
+          <strong>🌱 How to Plant This Pair</strong>
+          <ul>
+            <li>Direct sow borage seeds between strawberry plants in early spring</li>
+            <li>Borage is a <b>self-seeder</b> — plant once, enjoy for years</li>
+            <li>Edible blue star flowers can be used in salads &amp; drinks</li>
+            <li>Deadhead selectively to control spread</li>
+            <li>Also excellent companion for: tomatoes, squash, and beans</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-keywords="lavender brassica cabbage moth butterfly white repel flower herb companion">
+      <div class="card-color-bar plant-bar"></div>
+      <div class="card-body">
+        <span class="card-emoji">💜</span>
+        <span class="tag tag-teal">Companion Pair</span>
+        <div class="pair-badge">🥬 Kale / Cabbage <span class="arrow">+</span> 💜 Lavender</div>
+        <div class="benefits">
+          <span class="pill pill-teal">Repels Cabbage White</span>
+          <span class="pill pill-teal">Deters Aphids</span>
+          <span class="pill">Fragrant Border</span>
+        </div>
+        <p>The strong camphor scent of lavender disrupts the navigation of cabbage white butterflies and aphids, reducing egg-laying on your brassica crops significantly.</p>
+        <button class="toggle-btn" onclick="toggleRecipe(this)">▶ Planting Guide</button>
+        <div class="recipe-detail teal-detail">
+          <strong>🌱 How to Plant This Pair</strong>
+          <ul>
+            <li>Plant lavender as a permanent border around rotating brassica beds</li>
+            <li>Use compact varieties like 'Hidcote' or 'Munstead' for tight spaces</li>
+            <li>Space lavender 18" apart to form a dense aromatic hedge</li>
+            <li>Cut lavender bunches and hang inside the coop too — repels mites!</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+  <!-- Mid Ad — between sub-sections -->
+  <div class="ad-banner" style="margin:40px 0 10px; border-radius:10px;">
+    📢 Advertisement
+    <span><!-- Google AdSense: data-ad-slot="PLANTING_MID" --></span>
+    <div class="ad-inner">[ 728×90 Leaderboard Ad Space ]</div>
+  </div>
+
+  <!-- Sub-section: Cover Crops -->
+  <div style="display:flex; align-items:center; gap:10px; margin:30px 0 18px;">
+    <span style="font-size:1.6rem;">🌾</span>
+    <h3 style="font-family:'Playfair Display',serif; font-size:1.4rem; color:#4a5c10;">Cover Crops for Natural Soil Building</h3>
+  </div>
+
+  <div class="section-intro" style="border-left-color:#9ab832;">
+    <strong style="color:#4a5c10;">Why Cover Crops?</strong> After harvest, bare soil loses nutrients, erodes, and invites weeds. Cover crops protect and <em>actively improve</em> your soil — fixing nitrogen, breaking up compaction, feeding earthworms, and crowding out weeds — all without synthetic inputs.
+  </div>
+
+  <div class="cards-grid">
+
+    <div class="card" data-keywords="clover red white nitrogen fix legume cover crop soil fertility spring fall">
+      <div class="card-color-bar cover-bar"></div>
+      <div class="card-body">
+        <span class="card-emoji">🍀</span>
+        <span class="tag tag-cover">Cover Crop</span>
+        <h3>Crimson Clover</h3>
+        <p>One of the best nitrogen-fixing cover crops for the homestead garden — produces up to <b>100–150 lbs N/acre</b> and gorgeous crimson blooms that attract pollinators.</p>
+        <button class="toggle-btn" onclick="toggleRecipe(this)">▶ Planting Guide</button>
+        <div class="recipe-detail" style="border-left-color:#9ab832;">
+          <strong style="color:#4a5c10;">🌱 How to Use It</strong>
+          <ul>
+            <li><b>When to sow:</b> Early fall (6 wks before frost) or early spring</li>
+            <li><b>Seeding rate:</b> 8–10 lbs per 1,000 sq ft; broadcast and rake in</li>
+            <li><b>Terminate:</b> Mow or till in <b>2–3 weeks before planting</b> next crop</li>
+            <li><b>Best for:</b> Beds that will grow tomatoes, corn, or squash next</li>
+            <li>Let it flower briefly first — pollinators will thank you</li>
+          </ul>
+          <br/>
+          <table class="crop-table">
+            <tr><th>Benefit</th><th>Detail</th></tr>
+            <tr><td>Nitrogen Fixed</td><td>100–150 lbs/acre</td></tr>
+            <tr><td>Weed Suppression</td><td>★★★★☆</td></tr>
+            <tr><td>Winter Hardiness</td><td>Zones 6+ (annual)</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-keywords="winter rye cereal grain erosion weed suppression biomass organic matter fall winter">
+      <div class="card-color-bar cover-bar"></div>
+      <div class="card-body">
+        <span class="card-emoji">🌾</span>
+        <span class="tag tag-cover">Cover Crop</span>
+        <h3>Winter Rye</h3>
+        <p>The hardiest of all cover crops — germinates in near-freezing temperatures and produces massive biomass to smother weeds and feed soil microbes in spring.</p>
+        <button class="toggle-btn" onclick="toggleRecipe(this)">▶ Planting Guide</button>
+        <div class="recipe-detail" style="border-left-color:#9ab832;">
+          <strong style="color:#4a5c10;">🌱 How to Use It</strong>
+          <ul>
+            <li><b>When to sow:</b> Fall, right up until the first hard frost</li>
+            <li><b>Seeding rate:</b> 2–3 lbs per 1,000 sq ft</li>
+            <li><b>Terminate:</b> Crimp or mow at <b>early heading stage</b> in spring</li>
+            <li>Do not till immediately — wait 2–3 weeks after termination</li>
+            <li>Deep roots break up clay and bring up subsoil nutrients</li>
+          </ul>
+          <br/>
+          <table class="crop-table">
+            <tr><th>Benefit</th><th>Detail</th></tr>
+            <tr><td>Biomass Produced</td><td>Very High</td></tr>
+            <tr><td>Weed Suppression</td><td>★★★★★</td></tr>
+            <tr><td>Winter Hardiness</td><td>All zones</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-keywords="buckwheat fast growing phosphorus weed cover crop summer short season bee pollinator">
+      <div class="card-color-bar cover-bar"></div>
+      <div class="card-body">
+        <span class="card-emoji">🤍</span>
+        <span class="tag tag-cover">Cover Crop</span>
+        <h3>Buckwheat</h3>
+        <p>The fastest-growing cover crop — smothers weeds in <b>just 6 weeks</b>, scavenges phosphorus from the subsoil, and produces masses of bee-beloved white flowers.</p>
+        <button class="toggle-btn" onclick="toggleRecipe(this)">▶ Planting Guide</button>
+        <div class="recipe-detail" style="border-left-color:#9ab832;">
+          <strong style="color:#4a5c10;">🌱 How to Use It</strong>
+          <ul>
+            <li><b>When to sow:</b> Late spring through midsummer (warm season only)</li>
+            <li><b>Seeding rate:</b> 2–3 lbs per 1,000 sq ft</li>
+            <li><b>Terminate:</b> Mow just as flowers open — <b>before seeds set</b> or it will self-sow aggressively</li>
+            <li>Perfect for <b>between-season gaps</b> in the vegetable garden</li>
+            <li>Roots release acids that free up locked phosphorus for next crop</li>
+          </ul>
+          <br/>
+          <table class="crop-table">
+            <tr><th>Benefit</th><th>Detail</th></tr>
+            <tr><td>Days to Flower</td><td>35–45 days</td></tr>
+            <tr><td>Weed Suppression</td><td>★★★★☆</td></tr>
+            <tr><td>Phosphorus Release</td><td>High</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-keywords="hairy vetch nitrogen legume spring fall winter cover crop grain rye mix">
+      <div class="card-color-bar cover-bar"></div>
+      <div class="card-body">
+        <span class="card-emoji">🟣</span>
+        <span class="tag tag-cover">Cover Crop</span>
+        <h3>Hairy Vetch</h3>
+        <p>A nitrogen-fixing powerhouse that pairs perfectly with winter rye — the vetch climbs the rye stalks and together they produce the ultimate soil-building mulch.</p>
+        <button class="toggle-btn" onclick="toggleRecipe(this)">▶ Planting Guide</button>
+        <div class="recipe-detail" style="border-left-color:#9ab832;">
+          <strong style="color:#4a5c10;">🌱 How to Use It</strong>
+          <ul>
+            <li><b>When to sow:</b> Late summer to early fall</li>
+            <li><b>Seeding rate:</b> 1–2 lbs vetch + 1 lb rye per 1,000 sq ft (mix)</li>
+            <li><b>Terminate:</b> Crimp or roll at early bloom — do not incorporate; leave as mulch</li>
+            <li>No-till gardeners: plant directly into the terminated vetch/rye mat</li>
+            <li>Fixes up to <b>200 lbs N/acre</b> — the highest of any common cover crop</li>
+          </ul>
+          <br/>
+          <table class="crop-table">
+            <tr><th>Benefit</th><th>Detail</th></tr>
+            <tr><td>Nitrogen Fixed</td><td>Up to 200 lbs/acre</td></tr>
+            <tr><td>No-Till Friendly</td><td>★★★★★</td></tr>
+            <tr><td>Winter Hardiness</td><td>Zones 5+</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-keywords="oats fast cool season spring fall cover crop biomass organic matter easy beginner">
+      <div class="card-color-bar cover-bar"></div>
+      <div class="card-body">
+        <span class="card-emoji">🌿</span>
+        <span class="tag tag-cover">Cover Crop</span>
+        <h3>Oats (Spring Cover)</h3>
+        <p>The perfect beginner cover crop — fast-growing, winter-kills on its own so you don't have to terminate it, and leaves a clean, fluffy mulch layer behind.</p>
+        <button class="toggle-btn" onclick="toggleRecipe(this)">▶ Planting Guide</button>
+        <div class="recipe-detail" style="border-left-color:#9ab832;">
+          <strong style="color:#4a5c10;">🌱 How to Use It</strong>
+          <ul>
+            <li><b>When to sow:</b> Late summer to early fall (will winter-kill in zones 5 and colder)</li>
+            <li><b>Seeding rate:</b> 2–3 lbs per 1,000 sq ft</li>
+            <li><b>Termination:</b> None needed in cold climates — frost does the work</li>
+            <li>Leaves behind a natural straw mulch — just plant through it in spring</li>
+            <li>Best for: raised beds, small plots, and first-time cover croppers</li>
+          </ul>
+          <br/>
+          <table class="crop-table">
+            <tr><th>Benefit</th><th>Detail</th></tr>
+            <tr><td>Ease of Use</td><td>★★★★★ Beginner</td></tr>
+            <tr><td>Self-Terminates</td><td>Yes (zones 5 and colder)</td></tr>
+            <tr><td>Weed Suppression</td><td>★★★☆☆</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+    <div class="card" data-keywords="daikon radish tillage radish compaction deep roots brassica cover crop fall">
+      <div class="card-color-bar cover-bar"></div>
+      <div class="card-body">
+        <span class="card-emoji">🌰</span>
+        <span class="tag tag-cover">Cover Crop</span>
+        <h3>Tillage Radish (Daikon)</h3>
+        <p>Nicknamed the "tillage radish" because its massive taproots drill through hardpan, breaking compaction so dramatically it can replace a tiller.</p>
+        <button class="toggle-btn" onclick="toggleRecipe(this)">▶ Planting Guide</button>
+        <div class="recipe-detail" style="border-left-color:#9ab832;">
+          <strong style="color:#4a5c10;">🌱 How to Use It</strong>
+          <ul>
+            <li><b>When to sow:</b> Late summer (6–8 wks before first frost)</li>
+            <li><b>Seeding rate:</b> 6–8 lbs per acre; ¼ lb per 1,000 sq ft</li>
+            <li>Roots grow <b>12–24 inches deep</b>, shattering hardpan and compaction</li>
+            <li>Winter-kills; the decomposing root leaves a vertical channel for next crop's roots</li>
+            <li>⚠️ Smells strongly as it decomposes in spring — totally normal</li>
+          </ul>
+          <br/>
+          <table class="crop-table">
+            <tr><th>Benefit</th><th>Detail</th></tr>
+            <tr><td>Root Depth</td><td>12–24 inches</td></tr>
+            <tr><td>Compaction Relief</td><td>★★★★★</td></tr>
+            <tr><td>Self-Terminates</td><td>Yes (zones 6 and colder)</td></tr>
+          </table>
+        </div>
+      </div>
+    </div>
+
+  </div>
+
+</main>
+
+<!-- ══ BOTTOM AD BANNER ══ -->
+<div class="ad-banner" style="margin-top:40px;">
+  📢 Advertisement
+  <span><!-- Google AdSense: data-ad-slot="BOTTOM_BANNER" —- paste your <ins> tag here --></span>
+  <div class="ad-inner">[ 728×90 Leaderboard Ad Space ]</div>
+</div>
+
+<!-- ══ FOOTER ══ -->
+<footer>
+  <div class="footer-logo">🌿 The Natural Homestead Guide</div>
+  <p>Wholesome living, one season at a time.</p>
+  <p style="margin-top:10px;">
+    <a href="#pest">Pest Control</a> &nbsp;·&nbsp;
+    <a href="#poultry">Backyard Poultry</a> &nbsp;·&nbsp;
+    <a href="#flowers">Perennial Flowers</a> &nbsp;·&nbsp;
+    <a href="#planting">Intentional Planting</a>
+  </p>
+  <p style="margin-top:10px;"><a href="privacy-policy.html">Privacy Policy</a></p>
+  <p style="margin-top:12px; font-size:0.78rem; color:rgba(255,255,255,0.45);">
+    © 2025 The Natural Homestead Guide · Content is for informational purposes only.
+  </p>
+</footer>
+
+<script>
+  function toggleRecipe(btn) {
+    const detail = btn.nextElementSibling;
+    const isOpen = detail.classList.contains('show');
+    detail.classList.toggle('show', !isOpen);
+    btn.classList.toggle('open', !isOpen);
+    btn.textContent = isOpen ? '▶ ' + btn.textContent.slice(2) : '▼ ' + btn.textContent.slice(2);
+  }
+
+  function setActive(el) {
+    document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+    el.classList.add('active');
+  }
+
+  function handleSearch() {
+    const query = document.getElementById('searchInput').value.trim().toLowerCase();
+    const allCards = document.querySelectorAll('.card');
+    let shown = 0;
+    allCards.forEach(card => {
+      const keywords = (card.dataset.keywords || '').toLowerCase();
+      const title = card.querySelector('h3')?.textContent.toLowerCase() || '';
+      const body = card.querySelector('p')?.textContent.toLowerCase() || '';
+      const match = !query || keywords.includes(query) || title.includes(query) || body.includes(query);
+      card.classList.toggle('hidden', !match);
+      if (match) shown++;
+    });
+    const count = document.getElementById('resultsCount');
+    const noResults = document.getElementById('noResults');
+    if (query) {
+      count.textContent = `${shown} result${shown !== 1 ? 's' : ''} found for "${query}"`;
+      noResults.classList.toggle('show', shown === 0);
+    } else {
+      count.textContent = '';
+      noResults.classList.remove('show');
+    }
+  }
+
+  const sections = ['pest','poultry','flowers','planting'];
+  window.addEventListener('scroll', () => {
+    let current = '';
+    sections.forEach(id => {
+      const el = document.getElementById(id);
+      if (el && window.scrollY >= el.offsetTop - 120) current = id;
+    });
+    document.querySelectorAll('nav a').forEach(a => {
+      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
+    });
+  });
+</script>
+</body>
+</html>
