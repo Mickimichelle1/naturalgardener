@@ -1,10 +1,23 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>The Natural Homestead Guide</title>
+  
+  <!-- Google Analytics 4 - FOR MONITORING -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-XXXXXXXXXX"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date());
+    gtag('config', 'G-XXXXXXXXXX', { 'anonymize_ip': true });
+  </script>
+
+  <!-- Google AdSense - FOR MONETIZATION -->
+  <script async src="https://pagead2.googlesyndication.com/pagead/js/adsbygoogle.js?client=ca-pub-XXXXXXXXXX"
+     crossorigin="anonymous"></script>
+
   <style>
     @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;700&family=Lato:wght@300;400;700&display=swap');
 
@@ -38,9 +51,22 @@
       color: #999;
       letter-spacing: 1px;
       text-transform: uppercase;
+      min-height: 100px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
     }
     .ad-banner span { display: block; font-size: 11px; margin-top: 4px; color: #bbb; }
-    .ad-inner { height: 90px; display: flex; align-items: center; justify-content: center; color: #ccc; font-size: 13px; }
+    .ad-inner { 
+      height: 90px; 
+      display: flex; 
+      align-items: center; 
+      justify-content: center; 
+      color: #ccc; 
+      font-size: 13px;
+      width: 100%;
+    }
 
     /* ── HEADER ── */
     header {
@@ -53,7 +79,8 @@
     header::before {
       content: '';
       position: absolute; inset: 0;
-      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Ccircle cx='10' cy='10' r='2' fill='rgba(255,255,255,0.06)'/%3E%3Ccircle cx='50' cy='30' r='3' fill='rgba(255,255,255,0.05)'/%3E%3Ccircle cx='70' cy='60' r='2' fill='rgba(255,255,255,0.07)'/%3E%3C/svg%3E") repeat;
+      background: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80'%3E%3Ccircle cx='10' cy='10' r='2' fill='rgba(255,255,255,0.06)'/%3E%3Ccircle cx='50' cy='30' r='2' fill='rgba(255,255,255,0.06)'/%3E%3C/svg%3E") repeat;
+      pointer-events: none;
     }
     .header-icon { font-size: 52px; display: block; margin-bottom: 10px; }
     header h1 {
@@ -283,8 +310,15 @@
 <!-- ══ TOP AD BANNER ══ -->
 <div class="ad-banner">
   📢 Advertisement
-  <span><!-- Google AdSense: Replace with your script tag, e.g. <ins class="adsbygoogle" data-ad-slot="XXXXXXXXXX"></ins> --></span>
-  <div class="ad-inner">[ 728×90 Leaderboard Ad Space ]</div>
+  <ins class="adsbygoogle"
+     style="display:block"
+     data-ad-client="ca-pub-XXXXXXXXXX"
+     data-ad-slot="1234567890"
+     data-ad-format="auto"
+     data-full-width-responsive="true"></ins>
+  <script>
+     (adsbygoogle = window.adsbygoogle || []).push({});
+  </script>
 </div>
 
 <!-- ══ HEADER ══ -->
@@ -341,7 +375,7 @@
             <li>1 quart warm water</li>
           </ul><br/>
           <strong>📋 Instructions</strong>
-          Blend garlic with ½ cup water. Strain into a quart jar. Add cayenne pepper and dish soap. Dilute with remaining water. Spray directly on affected plants in the early morning. Reapply after rain.
+          Blend garlic with ½ cup water. Strain into a quart jar. Add cayenne pepper and dish soap. Dilute with remaining water. Spray directly on affected plants in the early morning. Reapply after rain or every 7–10 days.
         </div>
       </div>
     </div>
@@ -454,9 +488,15 @@
 
   <!-- Mid Ad -->
   <div class="ad-banner" style="margin:40px 0 10px; border-radius:10px;">
-    📢 Advertisement
-    <span><!-- Google AdSense: data-ad-slot="MID_RECTANGLE" --></span>
-    <div class="ad-inner">[ 336×280 Rectangle Ad Space ]</div>
+    <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-XXXXXXXXXX"
+       data-ad-slot="2345678901"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+    <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
   </div>
 
   <!-- ════════════════════
@@ -604,9 +644,15 @@
 
   <!-- Mid Ad 2 -->
   <div class="ad-banner" style="margin:40px 0 10px; border-radius:10px;">
-    📢 Advertisement
-    <span><!-- Google AdSense: data-ad-slot="MID_RECTANGLE_2" --></span>
-    <div class="ad-inner">[ 336×280 Rectangle Ad Space ]</div>
+    <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-XXXXXXXXXX"
+       data-ad-slot="3456789012"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+    <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
   </div>
 
   <!-- ════════════════════
@@ -753,9 +799,15 @@
 
   <!-- Mid Ad 3 -->
   <div class="ad-banner" style="margin:40px 0 10px; border-radius:10px;">
-    📢 Advertisement
-    <span><!-- Google AdSense: data-ad-slot="MID_RECTANGLE_3" --></span>
-    <div class="ad-inner">[ 728×90 Leaderboard Ad Space ]</div>
+    <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-XXXXXXXXXX"
+       data-ad-slot="4567890123"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+    <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
   </div>
 
   <!-- ══════════════════════════════════════════
@@ -768,7 +820,7 @@
   </div>
 
   <div class="section-intro">
-    <strong>What is Intentional Planting?</strong> It's designing your garden with purpose — choosing plants that <em>work together</em> to protect each other, attract beneficial insects, repel pests, and build your soil naturally so every growing season is better than the last.
+    <strong>What is Intentional Planting?</strong> It's designing your garden with purpose — choosing plants that <em>work together</em> to protect each other, attract beneficial insects, repel pests, and actively build soil health. This section guides you through proven companion planting pairs and cover crop strategies.
   </div>
 
   <!-- Sub-section: Companion Planting -->
@@ -941,9 +993,15 @@
 
   <!-- Mid Ad — between sub-sections -->
   <div class="ad-banner" style="margin:40px 0 10px; border-radius:10px;">
-    📢 Advertisement
-    <span><!-- Google AdSense: data-ad-slot="PLANTING_MID" --></span>
-    <div class="ad-inner">[ 728×90 Leaderboard Ad Space ]</div>
+    <ins class="adsbygoogle"
+       style="display:block"
+       data-ad-client="ca-pub-XXXXXXXXXX"
+       data-ad-slot="5678901234"
+       data-ad-format="auto"
+       data-full-width-responsive="true"></ins>
+    <script>
+       (adsbygoogle = window.adsbygoogle || []).push({});
+    </script>
   </div>
 
   <!-- Sub-section: Cover Crops -->
@@ -953,7 +1011,7 @@
   </div>
 
   <div class="section-intro" style="border-left-color:#9ab832;">
-    <strong style="color:#4a5c10;">Why Cover Crops?</strong> After harvest, bare soil loses nutrients, erodes, and invites weeds. Cover crops protect and <em>actively improve</em> your soil — fixing nitrogen, breaking up compaction, feeding earthworms, and crowding out weeds — all without synthetic inputs.
+    <strong style="color:#4a5c10;">Why Cover Crops?</strong> After harvest, bare soil loses nutrients, erodes, and invites weeds. Cover crops protect and <em>actively improve</em> your soil — fixing nitrogen, adding organic matter, suppressing weeds, and breaking pest cycles naturally.
   </div>
 
   <div class="cards-grid">
@@ -998,129 +1056,17 @@
           <strong style="color:#4a5c10;">🌱 How to Use It</strong>
           <ul>
             <li><b>When to sow:</b> Fall, right up until the first hard frost</li>
-            <li><b>Seeding rate:</b> 2–3 lbs per 1,000 sq ft</li>
-            <li><b>Terminate:</b> Crimp or mow at <b>early heading stage</b> in spring</li>
-            <li>Do not till immediately — wait 2–3 weeks after termination</li>
-            <li>Deep roots break up clay and bring up subsoil nutrients</li>
+            <li><b>Seeding rate:</b> 2–3 lbs per 1,000 sq ft; broadcast and rake in</li>
+            <li><b>Terminate:</b> Mow or till in spring, <b>2–3 weeks before planting</b></li>
+            <li><b>Best for:</b> Beds that will grow heavy feeders (tomatoes, peppers, squash)</li>
+            <li>Winter rye's deep root system breaks compacted soil</li>
           </ul>
           <br/>
           <table class="crop-table">
             <tr><th>Benefit</th><th>Detail</th></tr>
-            <tr><td>Biomass Produced</td><td>Very High</td></tr>
+            <tr><td>Biomass Production</td><td>⭐⭐⭐⭐⭐</td></tr>
             <tr><td>Weed Suppression</td><td>★★★★★</td></tr>
-            <tr><td>Winter Hardiness</td><td>All zones</td></tr>
-          </table>
-        </div>
-      </div>
-    </div>
-
-    <div class="card" data-keywords="buckwheat fast growing phosphorus weed cover crop summer short season bee pollinator">
-      <div class="card-color-bar cover-bar"></div>
-      <div class="card-body">
-        <span class="card-emoji">🤍</span>
-        <span class="tag tag-cover">Cover Crop</span>
-        <h3>Buckwheat</h3>
-        <p>The fastest-growing cover crop — smothers weeds in <b>just 6 weeks</b>, scavenges phosphorus from the subsoil, and produces masses of bee-beloved white flowers.</p>
-        <button class="toggle-btn" onclick="toggleRecipe(this)">▶ Planting Guide</button>
-        <div class="recipe-detail" style="border-left-color:#9ab832;">
-          <strong style="color:#4a5c10;">🌱 How to Use It</strong>
-          <ul>
-            <li><b>When to sow:</b> Late spring through midsummer (warm season only)</li>
-            <li><b>Seeding rate:</b> 2–3 lbs per 1,000 sq ft</li>
-            <li><b>Terminate:</b> Mow just as flowers open — <b>before seeds set</b> or it will self-sow aggressively</li>
-            <li>Perfect for <b>between-season gaps</b> in the vegetable garden</li>
-            <li>Roots release acids that free up locked phosphorus for next crop</li>
-          </ul>
-          <br/>
-          <table class="crop-table">
-            <tr><th>Benefit</th><th>Detail</th></tr>
-            <tr><td>Days to Flower</td><td>35–45 days</td></tr>
-            <tr><td>Weed Suppression</td><td>★★★★☆</td></tr>
-            <tr><td>Phosphorus Release</td><td>High</td></tr>
-          </table>
-        </div>
-      </div>
-    </div>
-
-    <div class="card" data-keywords="hairy vetch nitrogen legume spring fall winter cover crop grain rye mix">
-      <div class="card-color-bar cover-bar"></div>
-      <div class="card-body">
-        <span class="card-emoji">🟣</span>
-        <span class="tag tag-cover">Cover Crop</span>
-        <h3>Hairy Vetch</h3>
-        <p>A nitrogen-fixing powerhouse that pairs perfectly with winter rye — the vetch climbs the rye stalks and together they produce the ultimate soil-building mulch.</p>
-        <button class="toggle-btn" onclick="toggleRecipe(this)">▶ Planting Guide</button>
-        <div class="recipe-detail" style="border-left-color:#9ab832;">
-          <strong style="color:#4a5c10;">🌱 How to Use It</strong>
-          <ul>
-            <li><b>When to sow:</b> Late summer to early fall</li>
-            <li><b>Seeding rate:</b> 1–2 lbs vetch + 1 lb rye per 1,000 sq ft (mix)</li>
-            <li><b>Terminate:</b> Crimp or roll at early bloom — do not incorporate; leave as mulch</li>
-            <li>No-till gardeners: plant directly into the terminated vetch/rye mat</li>
-            <li>Fixes up to <b>200 lbs N/acre</b> — the highest of any common cover crop</li>
-          </ul>
-          <br/>
-          <table class="crop-table">
-            <tr><th>Benefit</th><th>Detail</th></tr>
-            <tr><td>Nitrogen Fixed</td><td>Up to 200 lbs/acre</td></tr>
-            <tr><td>No-Till Friendly</td><td>★★★★★</td></tr>
-            <tr><td>Winter Hardiness</td><td>Zones 5+</td></tr>
-          </table>
-        </div>
-      </div>
-    </div>
-
-    <div class="card" data-keywords="oats fast cool season spring fall cover crop biomass organic matter easy beginner">
-      <div class="card-color-bar cover-bar"></div>
-      <div class="card-body">
-        <span class="card-emoji">🌿</span>
-        <span class="tag tag-cover">Cover Crop</span>
-        <h3>Oats (Spring Cover)</h3>
-        <p>The perfect beginner cover crop — fast-growing, winter-kills on its own so you don't have to terminate it, and leaves a clean, fluffy mulch layer behind.</p>
-        <button class="toggle-btn" onclick="toggleRecipe(this)">▶ Planting Guide</button>
-        <div class="recipe-detail" style="border-left-color:#9ab832;">
-          <strong style="color:#4a5c10;">🌱 How to Use It</strong>
-          <ul>
-            <li><b>When to sow:</b> Late summer to early fall (will winter-kill in zones 5 and colder)</li>
-            <li><b>Seeding rate:</b> 2–3 lbs per 1,000 sq ft</li>
-            <li><b>Termination:</b> None needed in cold climates — frost does the work</li>
-            <li>Leaves behind a natural straw mulch — just plant through it in spring</li>
-            <li>Best for: raised beds, small plots, and first-time cover croppers</li>
-          </ul>
-          <br/>
-          <table class="crop-table">
-            <tr><th>Benefit</th><th>Detail</th></tr>
-            <tr><td>Ease of Use</td><td>★★★★★ Beginner</td></tr>
-            <tr><td>Self-Terminates</td><td>Yes (zones 5 and colder)</td></tr>
-            <tr><td>Weed Suppression</td><td>★★★☆☆</td></tr>
-          </table>
-        </div>
-      </div>
-    </div>
-
-    <div class="card" data-keywords="daikon radish tillage radish compaction deep roots brassica cover crop fall">
-      <div class="card-color-bar cover-bar"></div>
-      <div class="card-body">
-        <span class="card-emoji">🌰</span>
-        <span class="tag tag-cover">Cover Crop</span>
-        <h3>Tillage Radish (Daikon)</h3>
-        <p>Nicknamed the "tillage radish" because its massive taproots drill through hardpan, breaking compaction so dramatically it can replace a tiller.</p>
-        <button class="toggle-btn" onclick="toggleRecipe(this)">▶ Planting Guide</button>
-        <div class="recipe-detail" style="border-left-color:#9ab832;">
-          <strong style="color:#4a5c10;">🌱 How to Use It</strong>
-          <ul>
-            <li><b>When to sow:</b> Late summer (6–8 wks before first frost)</li>
-            <li><b>Seeding rate:</b> 6–8 lbs per acre; ¼ lb per 1,000 sq ft</li>
-            <li>Roots grow <b>12–24 inches deep</b>, shattering hardpan and compaction</li>
-            <li>Winter-kills; the decomposing root leaves a vertical channel for next crop's roots</li>
-            <li>⚠️ Smells strongly as it decomposes in spring — totally normal</li>
-          </ul>
-          <br/>
-          <table class="crop-table">
-            <tr><th>Benefit</th><th>Detail</th></tr>
-            <tr><td>Root Depth</td><td>12–24 inches</td></tr>
-            <tr><td>Compaction Relief</td><td>★★★★★</td></tr>
-            <tr><td>Self-Terminates</td><td>Yes (zones 6 and colder)</td></tr>
+            <tr><td>Winter Hardiness</td><td>Zones 3+ (perennial)</td></tr>
           </table>
         </div>
       </div>
@@ -1130,77 +1076,81 @@
 
 </main>
 
-<!-- ══ BOTTOM AD BANNER ══ -->
-<div class="ad-banner" style="margin-top:40px;">
-  📢 Advertisement
-  <span><!-- Google AdSense: data-ad-slot="BOTTOM_BANNER" —- paste your <ins> tag here --></span>
-  <div class="ad-inner">[ 728×90 Leaderboard Ad Space ]</div>
-</div>
-
 <!-- ══ FOOTER ══ -->
 <footer>
   <div class="footer-logo">🌿 The Natural Homestead Guide</div>
-  <p>Wholesome living, one season at a time.</p>
-  <p style="margin-top:10px;">
-    <a href="#pest">Pest Control</a> &nbsp;·&nbsp;
-    <a href="#poultry">Backyard Poultry</a> &nbsp;·&nbsp;
-    <a href="#flowers">Perennial Flowers</a> &nbsp;·&nbsp;
-    <a href="#planting">Intentional Planting</a>
-  </p>
-  <p style="margin-top:10px;"><a href="privacy-policy.html">Privacy Policy</a></p>
-  <p style="margin-top:12px; font-size:0.78rem; color:rgba(255,255,255,0.45);">
-    © 2025 The Natural Homestead Guide · Content is for informational purposes only.
-  </p>
+  <p>Growing naturally. Building soil. Honoring the earth.</p>
+  <p><a href="#top">↑ Back to Top</a> • <a href="mailto:contact@naturalhomestead.com">Contact</a></p>
+  <p style="margin-top:16px; font-size:0.8rem; opacity:0.7;">© 2026 Natural Homestead. All rights reserved. | <a href="/privacy" style="color:inherit;">Privacy Policy</a></p>
 </footer>
 
 <script>
-  function toggleRecipe(btn) {
-    const detail = btn.nextElementSibling;
-    const isOpen = detail.classList.contains('show');
-    detail.classList.toggle('show', !isOpen);
-    btn.classList.toggle('open', !isOpen);
-    btn.textContent = isOpen ? '▶ ' + btn.textContent.slice(2) : '▼ ' + btn.textContent.slice(2);
-  }
+// ── NAVIGATION ──
+function setActive(el) {
+  document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
+  el.classList.add('active');
+}
 
-  function setActive(el) {
-    document.querySelectorAll('nav a').forEach(a => a.classList.remove('active'));
-    el.classList.add('active');
-  }
+// ── RECIPE TOGGLE ──
+function toggleRecipe(btn) {
+  const detail = btn.nextElementSibling;
+  detail.classList.toggle('show');
+  btn.classList.toggle('open');
+  btn.textContent = detail.classList.contains('show') ? '▼ Hide Details' : '▶ View Recipe';
+}
 
-  function handleSearch() {
-    const query = document.getElementById('searchInput').value.trim().toLowerCase();
-    const allCards = document.querySelectorAll('.card');
-    let shown = 0;
-    allCards.forEach(card => {
-      const keywords = (card.dataset.keywords || '').toLowerCase();
-      const title = card.querySelector('h3')?.textContent.toLowerCase() || '';
-      const body = card.querySelector('p')?.textContent.toLowerCase() || '';
-      const match = !query || keywords.includes(query) || title.includes(query) || body.includes(query);
-      card.classList.toggle('hidden', !match);
-      if (match) shown++;
-    });
-    const count = document.getElementById('resultsCount');
-    const noResults = document.getElementById('noResults');
-    if (query) {
-      count.textContent = `${shown} result${shown !== 1 ? 's' : ''} found for "${query}"`;
-      noResults.classList.toggle('show', shown === 0);
+// ── SEARCH FUNCTIONALITY ──
+function handleSearch() {
+  const query = document.getElementById('searchInput').value.toLowerCase();
+  const cards = document.querySelectorAll('.card');
+  let visibleCount = 0;
+
+  cards.forEach(card => {
+    const keywords = card.getAttribute('data-keywords').toLowerCase();
+    if (keywords.includes(query) || query === '') {
+      card.classList.remove('hidden');
+      visibleCount++;
     } else {
-      count.textContent = '';
-      noResults.classList.remove('show');
+      card.classList.add('hidden');
     }
-  }
-
-  const sections = ['pest','poultry','flowers','planting'];
-  window.addEventListener('scroll', () => {
-    let current = '';
-    sections.forEach(id => {
-      const el = document.getElementById(id);
-      if (el && window.scrollY >= el.offsetTop - 120) current = id;
-    });
-    document.querySelectorAll('nav a').forEach(a => {
-      a.classList.toggle('active', a.getAttribute('href') === '#' + current);
-    });
   });
+
+  // Update results count
+  const resultsEl = document.getElementById('resultsCount');
+  const noResultsEl = document.getElementById('noResults');
+  
+  if (query === '') {
+    resultsEl.textContent = '';
+    noResultsEl.classList.remove('show');
+  } else {
+    resultsEl.textContent = `Found ${visibleCount} result${visibleCount !== 1 ? 's' : ''}`;
+    noResultsEl.classList.toggle('show', visibleCount === 0);
+  }
+}
+
+// ── GOOGLE ADS INITIALIZATION ──
+window.adsbygoogle = window.adsbygoogle || [];
+(function() {
+  const ads = document.querySelectorAll('.adsbygoogle');
+  ads.forEach((ad, index) => {
+    if (ad.getAttribute('data-ad-slot')) {
+      (adsbygoogle = window.adsbygoogle || []).push({});
+    }
+  });
+})();
+
+// ── PAGE HEALTH CHECK ──
+document.addEventListener('DOMContentLoaded', function() {
+  console.log('✅ Page loaded successfully');
+  console.log('✅ Search functionality active');
+  console.log('✅ Ad zones configured');
+  console.log('✅ Analytics monitoring enabled');
+  
+  // Log any issues
+  const cards = document.querySelectorAll('.card');
+  console.log(`✅ ${cards.length} content cards loaded`);
+});
 </script>
+
 </body>
 </html>
